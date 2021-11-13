@@ -101,7 +101,9 @@ public class FrozenRowTablePane extends JFrame {
 
         scroll.setPreferredSize(new Dimension(400, 100));
         //TODO: Calculate correctly dimension
-        int fixedHeight = (fixedTable.getRowHeight() + fixedTable.getRowMargin() + 8) * fixedRows +2;
+        int fixedHeaderHeight = fixedTable.getTableHeader().getPreferredSize().height;
+        int fixedHeight = fixedTable.getRowHeight() * fixedRows + fixedTable.getIntercellSpacing().height * (fixedRows +1)+ (top ? fixedHeaderHeight: 0);
+
         fixedScroll.setPreferredSize(new Dimension(400, fixedHeight));
         getContentPane().add(scroll, BorderLayout.CENTER);
         String position = top ? BorderLayout.NORTH: BorderLayout.SOUTH;

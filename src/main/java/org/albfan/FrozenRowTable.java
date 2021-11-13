@@ -25,7 +25,7 @@ public class FrozenRowTable {
                 }
 
                 JTable table = new JTable(data, columnNames);
-                FrozenRowTablePane frame = new FrozenRowTablePane(table, 3, true, false, false);
+                FrozenRowTablePane frame = new FrozenRowTablePane(table, 1, true, false, true);
                 frame.setSize(300, 150);
                 frame.addWindowListener(new WindowAdapter() {
                     public void windowClosing(WindowEvent e) {
